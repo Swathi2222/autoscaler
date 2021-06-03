@@ -4,13 +4,13 @@ kind: ClusterRoleBinding
 metadata:
   labels:
 {{ include "cluster-autoscaler.labels" . | indent 4 }}
-  name: {{ template "cluster-autoscaler.fullname" . }}
+  name: {{ .Values.rbac.serviceAccount.name }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ template "cluster-autoscaler.fullname" . }}
+  name: {{ .Values.rbac.serviceAccount.name }}
 subjects:
   - kind: ServiceAccount
-    name: {{ template "cluster-autoscaler.fullname" . }}
-    namespace: {{ .Values.namespace }}
+    name: {{ .Values.rbac.serviceAccount.name }}
+    namespace: {{ .Values.Namespace }}
 {{- end -}}
