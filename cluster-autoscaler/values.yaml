@@ -30,7 +30,7 @@ autoDiscovery:
 #   maxSize: 2<br />
 #   minSize: 1
 # </pre>
-autoscalingGroups: []
+autoscalingGroups:
  - name: istio-us-dev.k8s.local
    maxSize: 50
    minSize: 1
