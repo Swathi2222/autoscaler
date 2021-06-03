@@ -10,7 +10,8 @@ Expand the name of the chart.
 Create a default fully qualified app name.
 */}}
 {{- define "cluster-autoscaler.fullname" -}}
-{{ .Values.rbac.serviceAccount.name }}
+{{- default (printf "%s" .Values.rbac.serviceAccount.name) -}}
+{{- end -}}
 
 {{/*
 Create chart name and version as used by the chart label.
