@@ -146,7 +146,7 @@ extraVolumeSecrets: {}
   #       path: mypath
 
 # extraVolumes -- Additional volumes.
-extraVolumes: []
+extraVolumes:
   - name: ssl-certs
     hostPath:
       path: /etc/ssl/certs/ca-certificates.crt
